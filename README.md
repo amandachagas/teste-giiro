@@ -10,12 +10,12 @@ O projeto foi testado com o Python 3.5.3. As bibliotecas necessárias para rodar
 
 Para instalar as dependências necessárias utilize o comando:
 ```bash
-$ sudo make install
+$ make install
 ```
 
 Para rodar o servidor web com a aplicação, execute o comando:
 ```bash
-$ sudo make run
+$ make run
 ```
 
 ## Funcionalidades
