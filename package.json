@@ -1,0 +1,9 @@
+{
+  "name": "teste-giiro",
+  "version": "0.0.0",
+  "description": "Teste do processo de seleção GIIRO.",
+  "author": "GIIRO",
+  "devDependencies": {
+    "bower": "^1.8.4"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "giiro",
+  "dependencies": {
+    "leaflet": "#0.7.7",
+    "bootstrap": "#3.3.6",
+    "jquery": "1.9.1 - 2",
+    "materialize": "^0.100.2",
+    "jquery.cookie": "jquery-cookie#^1.4.1"
+  }
+}

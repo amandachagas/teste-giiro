@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Teste GIIRO</title>
+
+    {% block stylesheets %}
+    <!-- CSS Materialize -->
+    <link href="{% static 'bower_components/materialize/dist/css/materialize.min.css' %}" rel="stylesheet">
+    <!-- CSS Leaflet -->
+    <link href="{% static 'bower_components/leaflet/dist/leaflet.css' %}" rel="stylesheet">
+
+    <!-- CSS Main -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    {% endblock stylesheets %}
+</head>
+<body>
+    {% block navbar %}
+    <nav>
+        <div class="nav-wrapper"></div>
+    </nav>
+    {% endblock navbar %}
+
+    <main>
+        {% block content %}
+        <!-- Aqui vai o conteudo -->
+        {% endblock content %}
+    </main>
+
+    {% block footer %}
+    <footer class="page-footer"></footer>
+    {% endblock footer %}
+
+    {% block javascripts %}
+    <!-- jQuery-->
+    <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <!-- jQuery Cookie-->
+    <script src="{% static 'bower_components/jquery.cookie/jquery.cookie.js' %}"></script>
+    <!-- Materialize-->
+    <script src="{% static 'bower_components/materialize/dist/js/materialize.min.js' %}"></script>
+    <!-- Leaflet -->
+    <script src="{% static 'bower_components/leaflet/dist/leaflet.js' %}"></script>
+
+    <!-- Main JS file -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% endblock javascripts %}
+</body>
+</html>
