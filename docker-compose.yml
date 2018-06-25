@@ -1,0 +1,13 @@
+version: '2.0'
+services:
+  web:
+    restart: always
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    expose:
+      - 8000
+    volumes:
+      - ./giiro:/usr/src/app/giiro
+    command: python /usr/src/app/giiro/manage.py runserver 0.0.0.0:8000

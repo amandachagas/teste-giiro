@@ -1,5 +1,45 @@
-{% extends "mapa/base_site.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>GIIRO - Tarefa de seleção</title>
 
-{% block content %}
+    {% block stylesheets %}
+    <!-- CSS Materialize -->
+    <link href="{% static 'bower_components/materialize/dist/css/materialize.min.css' %}" rel="stylesheet">
+    <!-- CSS Leaflet -->
+    <link href="{% static 'bower_components/leaflet/dist/leaflet.css' %}" rel="stylesheet">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-{% endblock content %}
+
+    <!-- CSS Main -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    {% endblock stylesheets %}
+</head>
+<body>
+
+    <main>
+        {% block content %}
+        <div id="map"></div>
+        {% endblock content %}
+    </main>
+
+    {% block javascripts %}
+    <!-- jQuery-->
+    <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <!-- jQuery Cookie-->
+    <script src="{% static 'bower_components/jquery.cookie/jquery.cookie.js' %}"></script>
+    <!-- Materialize-->
+    <script src="{% static 'bower_components/materialize/dist/js/materialize.min.js' %}"></script>
+    <!-- Leaflet -->
+    <script src="{% static 'bower_components/leaflet/dist/leaflet.js' %}"></script>
+
+    <!-- Main JS file -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% endblock javascripts %}
+</body>
+</html>

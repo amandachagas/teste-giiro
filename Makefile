@@ -30,7 +30,7 @@ install-requirements:
 
 install-npm:
 	@echo "Instalando modulos Node:"
-	npm install
+	npm install -g bower
 
 install-bower-dependencies:
 	@echo "Instalando dependências Bower:"
