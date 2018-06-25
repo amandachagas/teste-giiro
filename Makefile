@@ -1,41 +1,25 @@
 SHELL := /bin/bash
 
-MKFILE_PATH := $(abspath $(MAKEFILE_LIST))
-VENV_DIR := $(dir $(MKFILE_PATH)).env
+# Docker-compose
+BASE_FILE=docker-compose.yml
 
 install:
-	$(MAKE) check-venv
-	$(MAKE) install-requirements
-	$(MAKE) install-npm
+	$(MAKE) install-bower
 	$(MAKE) install-bower-dependencies
 
+build:
+	docker-compose -f $(BASE_FILE) build;
+
 run:
-	$(MAKE) start-django-app
+	docker-compose -f $(BASE_FILE) up -d;
 
-check-venv:
-	@echo "Verificando existência de ambiente virtual:"
+access-container:
+	docker exec -it testegiiro_web_1 bash;	
 
-	@if [ ! -d $(VENV_DIR) ]; then \
-		echo "Ambiente virtual não encontrado! Criando ambiente virtual:"; \
-		$(MAKE) create-venv; \
-	fi
-
-create-venv:
-	@echo "Criando ambiente virtual:"
-	virtualenv -p python3 .env
-
-install-requirements:
-	@echo "Instalando requisitos:"
-	source .env/bin/activate && pip install --no-cache-dir -r requirements.txt
-
-install-npm:
+install-bower:
 	@echo "Instalando modulos Node:"
 	npm install -g bower
 
 install-bower-dependencies:
 	@echo "Instalando dependências Bower:"
 	cd giiro/mapa/static && bower install --allow-root
-
-start-django-app:
-	@echo "Iniciando aplicação Django:"
-	source .env/bin/activate && python giiro/manage.py runserver
