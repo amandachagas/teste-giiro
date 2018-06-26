@@ -18,6 +18,8 @@ Primeiramente você deverá instalar as dependências:
 make install
 ```
 
+(Se não funcionar, tente `sudo make install`)
+
 Em seguida você construirá o container Docker utilizando o comando (este comando pode demorar, depende principalmente da velocidade da sua internet):
 ``` bash
 sudo make build
