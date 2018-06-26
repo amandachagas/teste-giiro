@@ -6,7 +6,7 @@ Este projeto é um protótipo de aplicação web que usa mapas através da bibli
 
 Para rodar a aplicação básica será necessário conhecimento, ou familiaridade, com comandos básicos do `GIT` e `bash`.
 
-Utilizamos o arquivo `Makefile` para simplificar um conjunto de comandos para ajudá-lo na interação o docker, até então não será necessário alterá-lo, mas fique a vontade a futucar o quanto quiser.
+Utilizamos o arquivo `Makefile` para simplificar um conjunto de comandos para ajudá-lo na interação com o docker, até então, não será necessário alterá-lo mas fique a vontade para futucar o quanto quiser.
 
 Clone este projeto para sua máquina usando o Git.
 
@@ -34,9 +34,9 @@ Por fim, se tudo ocorrer corretamente, inicie a aplicação com o comando:
 sudo make run
 ```
 
-Utiliza um dos 2 métodos, descritos abaixo, para aplicar as migrações necessárias para rodar a aplicação básica.
+Utilize um dos 2 métodos, descritos abaixo, para aplicar as migrações necessárias para rodar a aplicação básica.
 
-Método 1:
+**Método 1**:
 
 Utilize o seguinte comando para acessar o container em tempo de execução e realizar as migrações do banco de dados necessárias:
 
@@ -51,7 +51,7 @@ python giiro/manage.py migrate
 exit #sair do terminal bash do container
 ```
 
-Método 2:
+**Método 2**:
 
 ```bash
 docker exec -it testegiiro_web_1 python giiro/manage.py migrate
@@ -65,6 +65,7 @@ Para acessar a aplicação, abra o navegador no endereço <http://localhost:8000
 - Para remover um marcador, clique sobre o mesmo e então um pop-up será aberto com um botão para apagar o marcador.
 
 **obs1**: inicialmente não há marcador cadastrado no mapa.
+
 **obs2**: os marcadores não são persistidos na base de dados, ou seja, após recarregar a página os mesmos sumirão.
 
 ## Tarefa
