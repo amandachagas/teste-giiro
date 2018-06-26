@@ -40,6 +40,7 @@ python giiro/manage.py makemigrations
 python giiro/manage.py migrate
 ```
 
+Para acessar a aplicação, abra o navegador no endereço <http://localhost:8000/>
 
 ## Funcionalidades
 
@@ -64,19 +65,19 @@ As funcionalidades a seguir são muito importantes, mas não foram implementadas
 - Não divulgue seu código-fonte para ninguém além de mim.
 - Se usar algum trecho de código da web (ex.: StackOverflow), cite a fonte nos comentários do seu programa.
 - Programe como se você estivesse trabalhando em um projeto real, atentando para a qualidade (dica - os arquivos com as configurações de inspeção de qualidade já estão inclusos na aplicação. Para os arquivos .py utilize o padrão **pep8**).
-- Não é permitido utilizar outras versões do Django se não as especificadas no arquivo `requiremets.txt`. Também não é permitido utilizar outras versões do Leaflet se não a **0.7.7**.
+- Não é permitido utilizar outras versões do Django se não as especificadas no arquivo `requirements.txt`. Também não é permitido utilizar outras versões do Leaflet se não a **0.7.7**.
 - Caso utilize alguma outra ferramenta que precise de instalação/configuração extra, modifique o arquivo `Makefile`, porém os comandos mencionados anteriormente devem ser persistidos.
 
 
 ## Bônus
 
-- Salvar a útlima posição e zoom que o usuário deixou antes de fechar a página, dando a impressão que ele continuou o uso da ferramenta mesmo após ter fechado a aplicação. 
+- Salvar a última posição e zoom que o usuário deixou antes de fechar a página, dando a impressão que ele continuou o uso da ferramenta mesmo após ter fechado a aplicação. 
 
 ## Referências e materiais de apoio
 
-- https://docs.djangoproject.com/en/2.0/
-- https://leafletjs.com/reference-0.7.7.html
-- https://leafletjs.com/examples.html
+- <https://docs.djangoproject.com/en/2.0/>
+- <https://leafletjs.com/reference-0.7.7.html>
+- <https://leafletjs.com/examples.html>
 
 ## Entrega
 
@@ -89,4 +90,4 @@ Envie um e-mail para mim informando os dias e horários preferenciais para uma e
 
 ## Prazo
 
-Você tem até o dia #### para enviar o seu programa.
+Você tem até o dia 4 de julho para enviar o seu programa.
