@@ -38,8 +38,7 @@ sudo make access-container
 
 Dentro do container:
 ```bash
-python giiro/manage.py makemigrations
-python giiro/manage.py migrate
+docker exec -it testegiiro_web_1 python giiro/manage.py migrate
 ```
 
 Para acessar a aplicação, abra o navegador no endereço <http://localhost:8000/>
