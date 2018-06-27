@@ -32,16 +32,16 @@ Em seguida você construirá o container Docker utilizando o comando (este coman
 sudo make build
 ```
 
-Por fim, se tudo ocorrer corretamente, inicie a aplicação com o comando:
-
-``` bash
-sudo make run
-```
-
 Aplique as migrações de banco de dados:
 
 ```bash
 docker exec -it testegiiro_web_1 python giiro/manage.py migrate
+```
+
+Por fim, se tudo ocorrer corretamente, inicie a aplicação com o comando:
+
+``` bash
+sudo make run
 ```
 
 Para acessar a aplicação, abra o navegador no endereço <http://localhost:8000/>
