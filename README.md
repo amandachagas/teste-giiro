@@ -46,6 +46,8 @@ sudo make run
 
 Para acessar a aplicação, abra o navegador no endereço <http://localhost:8000/>
 
+Dica: para visualizar o log da aplicação Python, utilize o comando `docker logs -f testegiiro_web_1`
+
 ## Funcionalidades implementadas
 
 - A aplicação exibe um mapa e permite ao usuário inserir (ao clicar no mapa) e mover marcadores (arrastando o marcador), que representam pontos de interesse.
