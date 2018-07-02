@@ -100,7 +100,6 @@
         /**
          * Implemente aqui a função de remover o marcador do mapa e do banco.
          */
-        //console.log(marker);
         var data = {'pk': marker.options.id};
 
         successAjax = function (response) {
@@ -136,7 +135,6 @@
          */
         var data = {}, successAjax, errorAjax;
 
-        //console.log(marker);
         var pk =  marker.target.options.id;
         var position = marker.target.getLatLng();
 
@@ -168,12 +166,21 @@
         });
     };
 
+    refreshCookie = function () {
+        $.cookie('my-zoom', map._zoom);
+        $.cookie('my-lat', map._animateToCenter.lat);
+        $.cookie('my-lng', map._animateToCenter.lng);
+    };
 
     map = L.map('map');
     
     map.on('load', loadMarkers.bind(this));
-    
-    map.setView([-12.9858, -38.4835], 13);
+
+    if( $.cookie('my-zoom') != undefined && $.cookie('my-lat') != undefined && $.cookie('my-lng') != undefined ){
+        map.setView([$.cookie('my-lat'), $.cookie('my-lng')], $.cookie('my-zoom'))
+    }else {
+        map.setView([-12.9858, -38.4835], 13);
+    }
 
     csrfCookie = $.cookie('csrftoken');
 
@@ -182,6 +189,7 @@
     }).addTo(map);
 
     map.on('click', addMarker.bind(this));
+    map.on('zoomend', refreshCookie.bind(this));
 
     /**
      * Caso queira implementar a funcionalodade bônus, utilize o $.cookie para persistir
