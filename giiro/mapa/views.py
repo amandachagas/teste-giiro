@@ -44,4 +44,15 @@ def move_marker(request):
 
 
 def remove_marker(request):
-    pass
+    if request.method == 'POST':
+        data = request.POST.dict()
+
+        try:
+            marker = Marker.objects.get(pk=int(data['pk']))
+            resp = {'id': marker.pk, 'lat': marker.lat, 'lng': marker.lng}
+            marker.delete()
+
+            return JsonResponse(json.dumps(resp), safe=False)
+        except Exception as e:
+            print(e)
+            return HttpResponse(request, status=400)

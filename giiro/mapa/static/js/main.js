@@ -100,6 +100,31 @@
         /**
          * Implemente aqui a função de remover o marcador do mapa e do banco.
          */
+        //console.log(marker);
+        var data = {'pk': marker.options.id};
+
+        successAjax = function (response) {
+            map.removeLayer(response); 
+        };
+
+        errorAjax = function (e) {
+            window.alert('Erro ao remover marcador');
+            console.log('Internal Error', e);
+        };
+        
+        $.ajax({
+            type: 'POST',
+            url: '/remove-marker/',
+            headers: { 'X-CSRFToken': csrfCookie },
+            data: data,
+            success: function (response) {
+                successAjax(marker);
+            },
+
+            error: function (error) {
+                errorAjax(error);
+            }
+        });
     };
 
     /**
