@@ -134,6 +134,38 @@
         /**
          * Implemente aqui a função de mover o marcador no mapa e no banco.
          */
+        var data = {}, successAjax, errorAjax;
+
+        //console.log(marker);
+        var pk =  marker.target.options.id;
+        var position = marker.target.getLatLng();
+
+        data.pk = pk;
+        data.lat = position.lat;
+        data.lng = position.lng;
+
+        successAjax = function (response) {
+            console.log('Passou do update');
+        };
+
+        errorAjax = function (e) {
+            window.alert('Erro ao atualizar marcador');
+            console.log('Internal Error', e);
+        };
+        
+        $.ajax({
+            type: 'POST',
+            url: '/update-marker/',
+            headers: { 'X-CSRFToken': csrfCookie },
+            data: data,
+            success: function (response) {
+                successAjax(marker);
+            },
+
+            error: function (error) {
+                errorAjax(error);
+            }
+        });
     };
 
 

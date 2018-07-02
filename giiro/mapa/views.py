@@ -40,7 +40,20 @@ def add_marker(request):
 
 
 def move_marker(request):
-    pass
+    if request.method == 'POST':
+        data = request.POST.dict()
+
+        try:
+            marker = Marker.objects.get(pk=int(data['pk']))
+            marker.lat = float(data['lat'])
+            marker.lng = float(data['lng'])
+            resp = {'id': marker.pk, 'lat': marker.lat, 'lng': marker.lng}
+            marker.save()
+
+            return JsonResponse(json.dumps(resp), safe=False)
+        except Exception as e:
+            print(e)
+            return HttpResponse(request, status=400)
 
 
 def remove_marker(request):
