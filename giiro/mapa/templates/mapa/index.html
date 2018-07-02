@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html class="full-height">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,11 +20,11 @@
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     {% endblock stylesheets %}
 </head>
-<body>
+<body class="full-height">
 
-    <main>
+    <main class="full-height">
         {% block content %}
-        <div id="map"></div>
+        <div id="map" class="full-height"></div>
         {% endblock content %}
     </main>
 
