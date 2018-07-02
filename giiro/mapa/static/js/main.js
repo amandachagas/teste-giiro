@@ -2,7 +2,7 @@
     var map, csrfCookie, loadMarkers, addMarker, finishAddMarker, removeMarker, dragMarker,
     onAddMarker;
 
-    map = L.map('map').setView([51.505, -0.09], 13);
+    map = L.map('map').setView([-12.9858, -38.4835], 13);
 
     csrfCookie = $.cookie('csrftoken');
 
@@ -27,7 +27,7 @@
 
         data.lat = marker.latlng.lat;
         data.lng = marker.latlng.lng;
-
+        
         successAjax = function (response) {
             var responseJson;
 
