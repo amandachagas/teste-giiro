@@ -2,14 +2,6 @@
     var map, csrfCookie, loadMarkers, addMarker, finishAddMarker, removeMarker, dragMarker,
     onAddMarker;
 
-    map = L.map('map').setView([-12.9858, -38.4835], 13);
-
-    csrfCookie = $.cookie('csrftoken');
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
     /**
      * Carrega todos os marcadores no mapa
      */
@@ -17,6 +9,35 @@
         /**
          * Implemente aqui a função de carregar todos os marcadores ao carregar o mapa.
          */
+        
+        successAjax = function (response) {
+            var responseJson;
+
+            responseJson = JSON.parse(response);
+            responseJson.map(
+                (marker) => {
+                    finishAddMarker(marker);
+                }
+            );
+        };
+
+        errorAjax = function (e) {
+            window.alert('Erro ao carregar marcadores');
+            console.log('Internal Error', e);
+        };
+
+        $.ajax({
+            type: 'GET',
+            url: '/load-markers/',
+            headers: { 'X-CSRFToken': csrfCookie },
+            success: function (response) {
+                successAjax(response);
+            },
+
+            error: function (error) {
+                errorAjax(error);
+            }
+        });
     };
 
     /**
@@ -89,6 +110,19 @@
          * Implemente aqui a função de mover o marcador no mapa e no banco.
          */
     };
+
+
+    map = L.map('map');
+    
+    map.on('load', loadMarkers.bind(this));
+    
+    map.setView([-12.9858, -38.4835], 13);
+
+    csrfCookie = $.cookie('csrftoken');
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
     map.on('click', addMarker.bind(this));
 

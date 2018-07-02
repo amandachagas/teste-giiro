@@ -16,7 +16,12 @@ def index(request):
 
 
 def load_markers(request):
-    pass
+    all_markers = Marker.objects.all()
+    markers_list = []
+    for marker in all_markers:
+        item = {'id': marker.pk, 'lat': marker.lat, 'lng': marker.lng} 
+        markers_list.append(item)
+    return JsonResponse(json.dumps(markers_list), safe=False)
 
 
 def add_marker(request):
