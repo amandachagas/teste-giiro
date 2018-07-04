@@ -1,0 +1,26 @@
+﻿Observacoes:
+
+
+No readme, as duas últimas informações finais sobre o setup do projeto estão trocadas.
+Quando damos o “make build” e logo em seguida rodamos o migrate da um erro dizendo que o container não existe. Ao rodar o “make run” e depois o migrate as modificações foram aplicadas.
+
+
+Utilizei bastante da documentação do Leaflet, em especial esses links:
+
+
+https://leafletjs.com/examples/quick-start/
+
+
+https://leafletjs.com/reference-0.7.7.html#map-events
+
+
+https://leafletjs.com/reference-0.7.7.html#marker
+
+
+https://leafletjs.com/reference-0.7.7.html#map-stuff-methods
+
+
+Para conseguir usar cookies, pesquisei bastante porém esse link foi o que me ajudou:
+
+
+https://www.hongkiat.com/blog/jquery-cookies/

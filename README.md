@@ -93,3 +93,7 @@ Envie seu código de uma das seguintes duas formas:
 ## Prazo
 
 Você tem até o dia 4 de julho para enviar o seu programa.
+
+## Observacções sobre a resolução do desafio
+
+Esse é um fork do repositório do teste-GIIRO e tal desafio foi resolvido por Amanda Chagas de Oliveira. As observacções e referências utilizadas estão no arquivo "Observacoes Teste GIIRO.txt"
